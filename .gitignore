@@ -1,0 +1,12 @@
+.env
+.nyc_output
+.vagrant/
+dist/
+coverage/
+node_modules/
+npm-debug.log
+public/*
+!public/images
+!public/fonts
+!public/scripts/.keep
+!public/styles/.keep
