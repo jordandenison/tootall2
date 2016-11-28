@@ -1,6 +1,9 @@
 import test from 'ava'
-// import index from '../src/index'
+const main = document.createElement('div')
+main.id = 'main'
+document.body.appendChild(main)
+import index from '../../src/index'
 
 test('index', t => {
-  t.truthy(1)
+  t.truthy(index)
 })

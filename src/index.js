@@ -12,6 +12,7 @@ window.onload = () => {
   if (!document.getElementById('main')) {
     const main = document.createElement('div')
     main.id = 'main'
+    main.className = 'pusher'
     document.body.appendChild(main)
   }
 

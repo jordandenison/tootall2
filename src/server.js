@@ -36,8 +36,8 @@ const createPage = (html, store) => `
       <title>React Redux Universal Boilerplate</title>
       <link rel="stylesheet" type="text/css" href="/styles/styles.css">
     </head>
-    <body>
-      <div id="main">${html}</div>
+    <body class="pushable">
+      <div id="main" class="pusher">${html}</div>
       <script charSet="UTF-8">
         window.__INITIAL_STATE__ = ${JSON.stringify(store.getState())}
       </script>
