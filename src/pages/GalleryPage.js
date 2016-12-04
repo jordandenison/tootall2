@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default class ContactPage extends React.Component {
+export default class GalleryPage extends React.Component {
   render () {
     return (
       <div className="gallery">
