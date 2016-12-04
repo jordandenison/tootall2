@@ -73,6 +73,10 @@ gulp.task('build-js-prod', () => buildJS(true))
 
 gulp.task('cacheBuster', cb => fs.writeFile('./cacheBuster.js', `module.exports = '-' + ${Date.now()}`, cb))
 
+gulp.task('gallery', cb =>
+  fs.readdir(path.join(__dirname, 'public/images/gallery'), (err, images) =>
+    fs.writeFile('./src/data/gallery.js', `export default ${JSON.stringify(images)}`, cb)))
+
 gulp.task('serve', () =>
   serve({
     port: webDevPort,
@@ -88,6 +92,6 @@ gulp.task('watch', () =>
     .watch([paths.js]
     .concat([paths.styl]), ['build', serve.reload]))
 
-gulp.task('build', done => sync('build-server', 'build-js', 'build-css', done))
-gulp.task('build-prod', done => sync('cacheBuster', 'build-server', 'build-js-prod', 'build-css-prod', done))
+gulp.task('build', done => sync('gallery', 'build-server', 'build-js', 'build-css', done))
+gulp.task('build-prod', done => sync('cacheBuster', 'gallery', 'build-server', 'build-js-prod', 'build-css-prod', done))
 gulp.task('default', done => sync('build', 'serve', 'watch', done))
