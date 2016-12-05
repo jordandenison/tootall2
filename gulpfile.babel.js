@@ -75,7 +75,9 @@ gulp.task('cacheBuster', cb => fs.writeFile('./cacheBuster.js', `module.exports 
 
 gulp.task('gallery', cb =>
   fs.readdir(path.join(__dirname, 'public/images/gallery'), (err, images) =>
-    fs.writeFile('./src/data/gallery.js', `export default ${JSON.stringify(images)}`, cb)))
+    err
+      ? cb(err)
+      : fs.writeFile('./src/data/gallery.js', `export default ${JSON.stringify(images)}`, cb)))
 
 gulp.task('serve', () =>
   serve({

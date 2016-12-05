@@ -2,11 +2,11 @@ import React from 'react'
 import equipment from '../data/equipment'
 
 export default class EquipmentPage extends React.Component {
-  render() {
+  render () {
     return (
-      <div className="ui container">
-        <h1>EQUIPMENT</h1>
-        <div className="equipment ui two column stackable grid">
+      <div className="equipment ui container">
+        <h1>Equipment</h1>
+        <div className="ui two column stackable grid">
           {equipment.map((item, i) =>
             <div className="column" key={i}>
               <div className="ui items">

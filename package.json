@@ -79,7 +79,10 @@
     "plugins": [
       "transform-runtime"
     ],
-    "ignore": "test/",
+    "ignore": [
+      "test/",
+      "src/data/gallery.js"
+    ],
     "env": {
       "development": {
         "sourceMaps": "inline"

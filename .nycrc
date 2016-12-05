@@ -1,0 +1,15 @@
+{
+  "exclude": [
+    "src/test/**/*.test.js",
+    "src/data"
+  ],
+  "reporter": [
+    "text",
+    "html"
+  ],
+  "require": [
+    "babel-register"
+  ],
+  "sourceMap": false,
+  "instrument": false
+}
