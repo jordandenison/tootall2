@@ -8,10 +8,22 @@ test('base route', async t => {
   t.is(res.status, 200)
 })
 
-test('test route', async t => {
-  const res = await request(server).get('/test/')
+test('equipment route', async t => {
+  const res = await request(server).get('/equipment/')
 
-  t.is(res.status, 200)
+  t.not(res.text.indexOf('equipment'), -1)
+})
+
+test('gallery route', async t => {
+  const res = await request(server).get('/gallery/')
+
+  t.not(res.text.indexOf('gallery'), -1)
+})
+
+test('contact route', async t => {
+  const res = await request(server).get('/contact/')
+
+  t.not(res.text.indexOf('contact'), -1)
 })
 
 test('404 route', async t => {
